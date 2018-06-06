@@ -1,0 +1,37 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/3deye.min.js"></script><br>
+
+
+<div id="game">
+    <button onClick="ChangeColor('beach')">Beach</button>
+    <button onClick="ChangeColor('rojo')">Rojo</button>
+    <div id="result"></div>
+</div>
+
+<div id="demo">
+</div>
+    
+
+<script>
+
+var user;
+
+$(document).ready(function(){
+    $("#demo").vc3dEye({
+    imagePath:"images/rojo/", // the location where you’ve put the images.
+    totalImages:36, // the number of images you have.
+    imageExtension:"png" // the extension of the images. Make sure all the images have same extension.
+    });
+    });
+
+function ChangeColor(choice) {
+    user = choice
+    $(document).ready(function(){
+    $("#demo").vc3dEye({
+    imagePath:"images/"+user+"/", // the location where you’ve put the images.
+    totalImages:36, // the number of images you have.
+    imageExtension:"png" // the extension of the images. Make sure all the images have same extension.
+    });
+    });
+}
+</script>
